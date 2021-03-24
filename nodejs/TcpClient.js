@@ -9,8 +9,8 @@ const rl = readline.createInterface({
 var client = net.connect(8000);
 
 rl.question('Enter Text : ', (value) => {
-    let color = value
-    client.write(color.toString());
+    let inp = value;
+    client.write(inp.toString());
     rl.close();
     client.end();
 });
