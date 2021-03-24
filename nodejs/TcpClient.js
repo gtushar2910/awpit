@@ -1,4 +1,3 @@
-const { Console } = require('console');
 var net = require('net');
 const readline = require('readline');
 const rl = readline.createInterface({
