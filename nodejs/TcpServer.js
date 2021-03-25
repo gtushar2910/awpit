@@ -10,7 +10,7 @@ var server = net.createServer(function(client) {
         console.log('Client disconnected:', clientId);
     })
 
-    client.write('Welcome client: ' + clientId + '\n');
+    //client.write('Welcome client: ' + clientId + '\n');
     client.pipe(client);
 
 });

@@ -6,13 +6,21 @@ const rl = readline.createInterface({
 });
 
 var client = net.connect(8000);
+console.log('Connected to Server !!! - Enter Text (Quit to stop)')
+var ask = function() {
+    rl.question('', (value) => {
+        if (value.toString() != 'Quit') {
+            client.write(value.toString());
+            ask();
+        } else {
+            rl.close();
+            client.end();
+            return;
+        }
+    });
+}
 
-rl.question('Enter Text : ', (value) => {
-    let inp = value;
-    client.write(inp.toString());
-    rl.close();
-    client.end();
-});
+ask();
 
 client.on('data', function(data) {
     console.log(data.toString());
