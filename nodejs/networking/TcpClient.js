@@ -6,7 +6,9 @@ const rl = readline.createInterface({
 });
 
 var client = net.connect(8000);
+
 console.log('Connected to Server !!! - Enter Text (Quit to stop)')
+
 var ask = function() {
     rl.question('', (value) => {
         if (value.toString() != 'Quit') {

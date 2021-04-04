@@ -14,7 +14,7 @@ server.on('message', function(msg, info) {
     //sending msg
     server.send(msg, info.port, 'localhost', function(error) {
         if (error) {
-            client.close();
+            server.close();
         } else {
             console.log('Data sent !!!');
         }
@@ -34,7 +34,9 @@ server.on('listening', function() {
 server.on('close', function() {
     console.log('Socket is closed !');
 });
+
 server.bind(2222);
+
 setTimeout(function() {
     server.close();
-}, 8000);
+}, 18000);

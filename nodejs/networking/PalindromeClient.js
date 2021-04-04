@@ -2,7 +2,7 @@ var net = require('net');
 var client = net.connect(8000);
 console.log('Connected to Server !!!')
 
-client.write('Sarvajanik');
+client.write('nayan');
 
 client.on('data', function(data) {
     console.log(data.toString());
