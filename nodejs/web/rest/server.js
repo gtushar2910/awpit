@@ -38,7 +38,7 @@ app.get('/:id', function(req, res) {
 })
 
 var id = 2;
-app.delete('/deleteUser', function(req, res) {
+app.get('/deleteUser', function(req, res) {
     // First read existing users.
     fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data) {
         data = JSON.parse(data);
